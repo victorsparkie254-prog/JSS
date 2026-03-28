@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm Produce Marketplace</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container py-4">
+    <div class="header-panel p-4 mb-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3">
+        <div>
+          <h1 class="h3 mb-1">Farm Produce Marketplace</h1>
+          <p class="mb-0 text-muted">Kakamega Farmer Cooperative</p>
+        </div>
+        <div class="d-flex flex-column flex-sm-row align-items-stretch gap-2 w-100 w-md-auto">
+          <input id="searchInput" class="form-control" type="search" placeholder="Search produce by name..." />
+          <select id="statusFilter" class="form-select">
+            <option value="All">All</option>
+            <option value="Available">Available</option>
+            <option value="Low Stock">Low Stock</option>
+            <option value="Out of Stock">Out of Stock</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-lg-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Add New Produce</h2>
+            <form id="addProduceForm">
+              <div class="mb-3">
+                <label class="form-label">Produce Name</label>
+                <input id="produceName" class="form-control" type="text" placeholder="e.g.,maize" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Price per Unit (USD)</label>
+                <input id="producePrice" class="form-control" type="number" min="0" step="0.01" placeholder="e.g., 35.50" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Quantity</label>
+                <input id="produceQty" class="form-control" type="number" min="0" step="1" placeholder="e.g., 25" required />
+              </div>
+              <button class="btn btn-success w-100" type="submit">Add Produce</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Produce Inventory</h2>
+            <div id="gridSection" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
